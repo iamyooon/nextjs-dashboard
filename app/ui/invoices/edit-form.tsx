@@ -11,13 +11,7 @@ import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateInvoice } from '@/app/lib/actions';
 
-export default function EditInvoiceForm({
-  invoice,
-  customers,
-}: {
-  invoice: InvoiceForm;
-  customers: CustomerField[];
-}) {
+export default function EditInvoiceForm({ invoice, customers }: {  invoice: InvoiceForm;  customers: CustomerField[];}) {
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 
   return (
@@ -38,7 +32,7 @@ export default function EditInvoiceForm({
               <option value="" disabled>
                 Select a customer
               </option>
-              {customers.map((customer) => (
+              {customers.map((customer) => ( 
                 <option key={customer.id} value={customer.id}>
                   {customer.name}
                 </option>
